@@ -1,0 +1,5 @@
+name:         CopyRight
+type:         module
+package:      Custom
+core:         '8.x'
+description:  'Add custom block'

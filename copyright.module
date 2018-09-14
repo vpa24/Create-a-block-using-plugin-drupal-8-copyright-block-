@@ -1,0 +1,10 @@
+<?php
+/**
+ * Implements hook_block_access().
+ */
+function copyright_block_access(\Drupal\block\Entity\Block $block, $operation, \Drupal\Core\Session\AccountInterface $account) {
+    if ($operation == 'view' && $block->getPluginId() == 'copyright') {
+        return \Drupal\Core\Access\AccessResult::forbiddenIf($block->getRegion() != 'footer_fifth');
+    }
+     return \Drupal\Core\Access\AccessResult::neutral();
+}
